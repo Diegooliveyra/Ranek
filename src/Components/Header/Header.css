@@ -1,0 +1,13 @@
+.header {
+  margin-top: 2rem;
+}
+
+.header nav a {
+  display: inline-block;
+  padding: 0.875rem 1rem;
+  background: #eee;
+  font-size: 1.25rem;
+}
+.header nav a + a {
+  margin-left: 1rem;
+}

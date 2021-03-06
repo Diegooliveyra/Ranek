@@ -1,0 +1,10 @@
+.produtos {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.produtos .card {
+  max-width: 240px;
+}
