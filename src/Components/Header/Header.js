@@ -1,18 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../style/GlobalStyle.css';
-import './Header.css';
+import style from './Header.module.css';
 
 const Header = () => {
   return (
-    <header className="container header">
+    <header className={`${style.header} container`}>
       <nav>
-        <NavLink to="/" end activeStyle={{ background: '#DDD' }}>
-          Produtos
-        </NavLink>
-        <NavLink to="contato" activeStyle={{ background: '#DDD' }}>
-          Contato
-        </NavLink>
+        <ul className={style.lista}>
+          <li>
+            <NavLink to="/" end activeClassName={style.active}>
+              Produtos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="contato" activeClassName={style.active}>
+              Contato
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );

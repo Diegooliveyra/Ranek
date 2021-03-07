@@ -17,7 +17,20 @@
   margin-top: 1rem;
 }
 
-.contato .content p {
+.lista {
+  list-style: none;
+}
+
+.lista li {
   font-size: 1.25rem;
   margin-top: 0.8rem;
+}
+
+.lista li::before {
+  content: '';
+  width: 15px;
+  height: 2px;
+  background-color: #ddd;
+  display: inline-block;
+  margin-right: 10px;
 }

@@ -1,0 +1,27 @@
+.header {
+  margin-top: 2rem;
+}
+
+.lista {
+  display: flex;
+  list-style: none;
+}
+
+.lista li a {
+  display: block;
+  padding: 0.875rem 1rem;
+  border-radius: 0.4rem;
+  background: #eee;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  margin-right: 1rem;
+}
+
+.lista li .active,
+.lista li a:hover {
+  background-color: #ddd;
+}
+
+.lista nav a + a {
+  margin-left: 1rem;
+}
