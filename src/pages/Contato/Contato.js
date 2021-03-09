@@ -6,7 +6,7 @@ import Head from '../../Components/Head/Head';
 
 const Contato = () => {
   return (
-    <div className={`${style.contato} container animaLeft`}>
+    <div className={`${style.contato} + animaLeft`}>
       <Head title="Ranek | Contato" description="Essa é a pagina contato" />
       <div className={style.image}>
         <img src={foto} alt="Maquina de escrever" />

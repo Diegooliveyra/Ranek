@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Head from '../../Components/Head/Head';
 import '../../style/GlobalStyle.css';
-import './Home.css';
+import style from './Home.module.css';
 
 const Produtos = () => {
-  const [produtos, setProdutos] = useState([]);
+  const [produtos, setProdutos] = useState(null);
 
   useEffect(() => {
     fetch('https://ranekapi.origamid.dev/json/api/produto')
@@ -13,20 +13,19 @@ const Produtos = () => {
       .then((json) => setProdutos(json));
   }, []);
 
+  if (produtos === null) return null;
   return (
-    <div className="container">
+    <section className={`${style.produtos} + animaLeft`}>
       <Head title="Ranek" />
-      <div className="produtos">
-        {produtos.map((produto) => (
-          <div className="card" key={produto.id}>
-            <Link to={`produto/${produto.id}`}>
-              <img src={produto.fotos[0].src} alt="" />
-            </Link>
-            <h2>{produto.nome}</h2>
-          </div>
-        ))}
-      </div>
-    </div>
+      {produtos.map((produto) => (
+        <div className={style.card} key={produto.id}>
+          <Link to={`produto/${produto.id}`}>
+            <img src={produto.fotos[0].src} alt={produto.fotos[0].titulo} />
+          </Link>
+          <h2>{produto.nome}</h2>
+        </div>
+      ))}
+    </section>
   );
 };
 
